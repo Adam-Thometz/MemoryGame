@@ -1,7 +1,21 @@
+body {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ce3da6d1-215e-479a-a318-01beab7c4941/deadcov-79f88c8c-6e5a-4687-8e69-89e8f8cb96d2.jpg/v1/fill/w_1032,h_774,q_70,strp/devil_in_my_brain__hdwallpaper_fractal_f2u_free_dl_by_jane_phantom_deadcov-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ0MCIsInBhdGgiOiJcL2ZcL2NlM2RhNmQxLTIxNWUtNDc5YS1hMzE4LTAxYmVhYjdjNDk0MVwvZGVhZGNvdi03OWY4OGM4Yy02ZTVhLTQ2ODctOGU2OS04OWU4ZjhjYjk2ZDIuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.VL4mM1iGt46pi6GXWfKhEiP9jAEK4JhKmxOCk52kF4w
+  );
+  background-size: cover;
+}
+
 #game div {
-  border: 1px solid black;
+  border: 5px solid white;
   width: 15%;
   height: 200px;
   margin: 10px;
   display: inline-block;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  color: darkmagenta;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgba(143, 188, 143, 0.438);
 }

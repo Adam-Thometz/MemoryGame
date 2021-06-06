@@ -79,9 +79,6 @@ function handleCardClick(e) {
     let gif2 = second.className
 
     if (gif1 === gif2) {
-      setTimeout(function() {
-        alert('Correct match!');
-      }, 1)
       cardsFlipped += 2;
       first.removeEventListener('click', handleCardClick);
       second.removeEventListener('click', handleCardClick);
@@ -91,7 +88,7 @@ function handleCardClick(e) {
     } else {
       setTimeout(function() {
         alert('Incorrect match!');
-      }, 1)
+      }, 3)
       setTimeout(function() {
         first.style.backgroundColor = "";
         second.style.backgroundColor = "";
