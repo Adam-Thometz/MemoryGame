@@ -1,4 +1,5 @@
 const gameContainer = document.getElementById("game");
+const startBtn = document.getElementById("start")
 let first = null;
 let second = null;
 let cardsFlipped = 0;
@@ -41,6 +42,7 @@ function shuffle(array) {
 }
 
 let shuffledColors = shuffle(COLORS);
+let attempts
 
 // this function loops over the array of colors
 // it creates a new div and gives it a class with the value of the color
@@ -58,6 +60,27 @@ function createDivsForColors(colorArray) {
 
     // append the div to the element with an id of game
     gameContainer.append(newDiv);
+  }
+
+}
+
+function makeGame() {
+  gameContainer.innerHTML = ""
+  createDivsForColors(shuffledColors)
+
+  // Score tracker
+  attempts = 0
+  const tracker = document.createElement('p')
+  tracker.classList.add('score')
+  tracker.innerText = `Your attempts: ${attempts}`
+  gameContainer.append(tracker)
+
+  // Record
+  if (localStorage.getItem('record')) {
+  const highScore = document.createElement('p')
+  highScore.classList.add('highScore')
+  highScore.innerText = `Your record: ${localStorage.getItem('record')}`
+  gameContainer.append(highScore) 
   }
 }
 
@@ -99,6 +122,8 @@ function handleCardClick(e) {
         noClicking = true;
       }, 1000);
       noClicking = false;
+      attempts++
+      document.querySelector('.score').innerText = `Your attempts: ${attempts}`
     }
   }
   
@@ -106,7 +131,17 @@ function handleCardClick(e) {
     setTimeout(function() {
       alert('You won!');
     }, 2)
+    
+    // If new record, store in localStorage
+    const record = localStorage.getItem('record')
+    if (attempts < record || !record) localStorage.setItem('record', attempts)
+
+    // Create restart button
+    const restartBtn = document.createElement('button')
+    restartBtn.innerText = 'Restart'
+    restartBtn.addEventListener("click", makeGame)
+    gameContainer.append(restartBtn)
   };
 }
 // when the DOM loads
-createDivsForColors(shuffledColors);
+startBtn.addEventListener('click', makeGame)
